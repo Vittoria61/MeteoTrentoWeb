@@ -21,7 +21,7 @@
 
     <p><strong>Evoluzione breve: </strong>@Model.modello.evoluzioneBreve</p>
 
-    <p><strong>Evoluzione breve: </strong>@Model.modello.evoluzione</p>
+    <p><strong>Evoluzione: </strong>@Model.modello.evoluzione</p>
     
     <h4>Lista previsioni</h4>
     @if (Model.modello.previsione.Length == 0)
@@ -30,6 +30,32 @@
     }
     else
     {
+        <div class="accordion" id="accordionExample">
+
+        @foreach (var previsione in Model.modello.previsione)
+        {
+            @foreach (var giorno in previsione.giorni)
+            {
+            <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="accordion-@giorno.giorno" aria-expanded="false" aria-controls="accordion-@giorno.giorno">
+                                <img src="@giorno.icona"/>
+                                <p>@giorno.giorno</p>
+                            </button>
+                        </h2>
+                        <div id="accordion-@giorno.giorno" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                <strong>This is the first item's accordion body.</strong> It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                            </div>
+                        </div>
+                    </div>
+                
+                    }
+            
+                    }
+                    </div>
+        
+        
         // TODO: Lista previsioni
     }
 
