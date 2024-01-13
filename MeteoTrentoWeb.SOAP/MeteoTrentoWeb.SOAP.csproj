@@ -14,12 +14,12 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Folder Include="BusinessLogic\" />
+      <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+      <PackageReference Include="SoapCore" Version="1.1.0.41" />
     </ItemGroup>
 
     <ItemGroup>
-      <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
-      <PackageReference Include="SoapCore" Version="1.1.0.41" />
+      <ProjectReference Include="..\MeteoTrentoWeb.Modelli\MeteoTrentoWeb.Modelli.csproj" />
     </ItemGroup>
 
 </Project>
