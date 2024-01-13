@@ -1,0 +1,16 @@
+services:
+  MeteoTrentoWeb:
+    image: meteotrentoweb
+    build:
+      context: .
+      dockerfile: MeteoTrentoWeb/Dockerfile
+    ports:
+      - 2222:80
+  
+  MeteoTrentoWeb.SOAP:
+    image: meteotrentowebsoap
+    build:
+      context: .
+      dockerfile: MeteoTrentoWeb.SOAP/Dockerfile
+    ports:
+      - 1111:80
