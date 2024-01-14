@@ -27,7 +27,7 @@ public class SoapService : ISOAPService
                     RootObject modello = JsonConvert.DeserializeObject<RootObject>(result);
                     foreach (var previsione in modello.previsione)
                     {
-                        return previsione.giorni.Where(giorni => giorni.giorno.Equals(data)).First();
+                        return previsione.giorni.First(giorni => giorni.giorno.Equals(data));
                     }
                 }
             }
