@@ -17,7 +17,7 @@
 <body>
 
 <div class="container mt-3">
-    <h2>Previsione @Model.modello.dataPubblicazione</h2>
+    <h2>Previsione Trento @Model.modello.dataPubblicazione.Replace('T', ' ').Substring(0, Model.modello.dataPubblicazione.Length - 5)</h2>
 
     <p>
         <strong>Evoluzione breve: </strong>@Model.modello.evoluzioneBreve
@@ -43,8 +43,8 @@
                     <div class="accordion-item">
                         <h2 class="accordion-header">
                             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordion-@giorno.giorno" aria-expanded="false" aria-controls="accordion-@giorno.giorno">
-                                <img src="@giorno.icona"/>
-                                <p>@giorno.giorno</p>
+                                
+                                <p><img src="@giorno.icona" width="50" height="50"/> @giorno.giorno</p>
                             </button>
                         </h2>
                         <div id="accordion-@giorno.giorno" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
@@ -56,8 +56,11 @@
                                         <th scope="col"></th>
                                         <th scope="col">Fascia</th>
                                         <th scope="col">Ore</th>
-                                        <th scope="col">Direzione Vento</th>
-                                        <th scope="col">Vento</th>
+                                        <th scope="col">Meteo</th>
+                                        <th scope="col">Vento in quota</th>
+                                        <th scope="col">Dir. Vento in quota</th>
+                                        <th scope="col">Vento a valle</th>
+                                        <th scope="col">Dir. Vento a valle</th>
                                         <th scope="col">Zero termico</th>
                                     </tr>
                                     </thead>
@@ -65,13 +68,16 @@
                                     {
                                         <tbody>
                                         <tr>
-                                            <th scope="col">
-                                                <img src="@fascia.icona"/>
+                                            <th>
+                                                <img src="@fascia.icona" width="50" height="50"/>
                                             </th>
-                                            <th scope="row">@fascia.fasciaPer</th>
+                                            <th >@fascia.fasciaPer</th>
                                             <td>@fascia.fasciaOre</td>
-                                            <td>@fascia.descVentoDirQuota</td>
+                                            <td>@fascia.descIcona</td>
                                             <td>@fascia.descVentoIntQuota</td>
+                                            <td>@fascia.descVentoDirQuota</td>
+                                            <td>@fascia.descVentoIntValle</td>
+                                            <td>@fascia.descVentoDirValle</td>
                                             <td>@fascia.zeroTermico</td>
                                         </tr>
                                         </tbody>
