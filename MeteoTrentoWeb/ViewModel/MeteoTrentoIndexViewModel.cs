@@ -2,11 +2,11 @@ using MeteoTrentoWeb.Modelli;
 
 namespace MeteoTrentoWeb.ModelView;
 
-public class MeteoTrentoModelView
+public class MeteoTrentoIndexViewModel
 {
     public RootObject modello { get; set; }
 
-    public MeteoTrentoModelView(RootObject modello)
+    public MeteoTrentoIndexViewModel(RootObject modello)
     {
         this.modello = modello;
     }

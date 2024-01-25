@@ -28,7 +28,7 @@ public class MeteoTrentoController : Controller
     public IActionResult Index()
     {
         RootObject modello = this.CaricaDati();
-        MeteoTrentoModelView mv = new MeteoTrentoModelView(modello);
+        MeteoTrentoIndexViewModel mv = new MeteoTrentoIndexViewModel(modello);
         return View(mv);
     }
 }
