@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using MeteoTrentoWeb.Modelli;
-using MeteoTrentoWeb.ModelView;
+using MeteoTrentoWeb.ViewModel;
 using Newtonsoft.Json;
 
 namespace MeteoTrentoWeb.Controllers;
@@ -28,7 +28,7 @@ public class MeteoTrentoController : Controller
     public IActionResult Index()
     {
         RootObject modello = this.CaricaDati();
-        MeteoTrentoIndexViewModel mv = new MeteoTrentoIndexViewModel(modello);
-        return View(mv);
+        MeteoTrentoIndexViewModel vm = new MeteoTrentoIndexViewModel(modello);
+        return View(vm);
     }
 }

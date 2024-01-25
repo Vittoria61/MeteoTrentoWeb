@@ -1,6 +1,6 @@
 using MeteoTrentoWeb.Modelli;
 
-namespace MeteoTrentoWeb.ModelView;
+namespace MeteoTrentoWeb.ViewModel;
 
 public class MeteoTrentoIndexViewModel
 {
