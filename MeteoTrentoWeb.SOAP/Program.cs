@@ -12,7 +12,7 @@ app.UseRouting();
 
 app.UseEndpoints(endpoints =>
 {
-    endpoints.UseSoapEndpoint<ISOAPService>("/Service.asmx", new SoapEncoderOptions(), SoapSerializer.XmlSerializer);
+    endpoints.UseSoapEndpoint<ISOAPService>("/Service.wsdl", new SoapEncoderOptions(), SoapSerializer.XmlSerializer);
 });
 
 app.Run();
